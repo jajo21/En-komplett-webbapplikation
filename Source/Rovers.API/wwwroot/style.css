@@ -1,6 +1,24 @@
+*{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+body{
+    background-color: rgb(41, 41, 41);
+    color: white;
+}
+button {
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: #fc8200;
+    border: 1px solid white;
+    color: white;
+}
+button:hover {
+    background-color: rgb(255, 47, 47);
+}
+
 /* HEADER */
 #headerImg {
-    border: 1px solid #808080;
     padding: 2px;
     margin: 8px;
     border-radius: 400px;
@@ -22,12 +40,14 @@
 #menu div {
     list-style: none;
     text-align: center;
-    background-color: #d6d6d6;
-    border: 1px solid #808080;
+    background-color: #fc8200;
+    border: 1px solid white;
     margin: 2px;
+    border-radius: 4px;
 }
 #menu div:hover {
-    background-color: white;
+    background-color: rgb(255, 47, 47);
+    cursor: pointer;
 }
 
 /* --------------------- */
@@ -35,14 +55,15 @@
 /* CONTENT */
 
 #content {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 20px 0px;
 }
 
 #content img {
     width: 300px;
     height: 300px;
     margin: 10px;
+    border: 3px solid white;
+    align-content: center;
 }
 
 #content button {
@@ -53,7 +74,7 @@
 
 /* FOOTER */
 footer {
-    background-color: #d6d6d6;
+    background-color: #fc8200;
     text-align: center;
     padding: 2px;
     position: fixed;
@@ -62,3 +83,26 @@ footer {
     width: 100%;
 }
 /* ----------- */
+
+@media screen and (min-width: 722px) {
+    html, body {
+        max-width: 980px;
+        margin:0 auto;
+      }
+    button {
+        padding: 5px;
+    }
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #menu {
+        display: flex;
+        justify-content: space-around;
+    }
+    #menu div {
+        padding: 20px;
+    }
+}
