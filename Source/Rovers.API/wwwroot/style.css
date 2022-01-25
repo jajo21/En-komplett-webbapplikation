@@ -34,7 +34,7 @@ button:hover {
     font-size: 40px;
 }
 
-/* ------------------- */
+/* -------------------------------- */
 
 /* NAVBAR */
 #menu div {
@@ -50,7 +50,7 @@ button:hover {
     cursor: pointer;
 }
 
-/* --------------------- */
+/* ---------------------------------------- */
 
 /* CONTENT */
 
@@ -63,14 +63,13 @@ button:hover {
     height: 300px;
     margin: 10px;
     border: 3px solid white;
-    align-content: center;
 }
 
 #content button {
     margin-left: 5px;
 }
 
-/* ----------- */
+/* ------------------------------- */
 
 /* FOOTER */
 footer {
@@ -82,13 +81,14 @@ footer {
     left: 0;
     width: 100%;
 }
-/* ----------- */
+/* -------------------------------- */
 
+/* STÖRRE SKÄRM */
 @media screen and (min-width: 722px) {
-    html, body {
-        max-width: 980px;
+    html {
+        max-width: 1000px;
         margin:0 auto;
-      }
+    }
     button {
         padding: 5px;
     }
@@ -106,3 +106,4 @@ footer {
         padding: 20px;
     }
 }
+/* ------------------------------------- */
