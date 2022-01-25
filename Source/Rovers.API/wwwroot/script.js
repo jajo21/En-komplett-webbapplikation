@@ -57,27 +57,66 @@ const displayRoverInfo = async(roverData) => {
 }
 
 const displayRoverPhotos = async (roverName, btn) => {
-    const roverData = await getData('https://api.nasa.gov/mars-photos/api/v1/manifests/' + roverName + '/?api_key=D8ibfnfTOZIcR075vaMmFOaeVfMy116t1DuxOeAj');
-    const maxDate = roverData.photo_manifest.max_date;
+/*     const roverData = await getData('https://api.nasa.gov/mars-photos/api/v1/manifests/' + roverName + '/?api_key=D8ibfnfTOZIcR075vaMmFOaeVfMy116t1DuxOeAj');
+    const maxDate = roverData.photo_manifest.max_date; */
 
-    const lastPhotos = await getData('https://api.nasa.gov/mars-photos/api/v1/rovers/' + roverName + '/photos?earth_date=' + maxDate + '&api_key=D8ibfnfTOZIcR075vaMmFOaeVfMy116t1DuxOeAj');
     btn.addEventListener('click', async () => {
         app.content.innerHTML = '';
         btn.remove();
 
-        for(let i= 0; i<lastPhotos.photos.length; i++)
-        {
-            let photoURL = lastPhotos.photos[i].img_src;
-            let roverPhoto = document.createElement('img');
-            roverPhoto.src = photoURL;
-            roverPhoto.alt = "Bild från rover";
-            roverPhoto.classList = "roverPhoto";
-            app.content.appendChild(roverPhoto);
-        }
-    })
+        const h2 = document.createElement('h2');
+        h2.innerText = roverName + ' foton';
+        app.content.appendChild(h2);
 
+        const photosTaken = await countDates(roverName);
+        const betweenDatesElement = document.createElement('p');
+        betweenDatesElement.innerText = 'Foton tillgänliga mellan ' + photosTaken;
+        app.content.appendChild(betweenDatesElement);
+
+        const dateInput = document.createElement('input');
+        dateInput.type = 'date';
+        app.content.appendChild(dateInput);
+
+        const button = document.createElement('button');
+        button.innerText = "Välj";
+        app.content.appendChild(button);
+
+        button.addEventListener('click', async () => {
+
+            const checkdiv = document.querySelector('#photos');
+            if(checkdiv !== null){
+                checkdiv.remove();
+            }
+            const photoDiv = document.createElement('div');
+            photoDiv.id="photos";
+            app.content.appendChild(photoDiv);
+
+            const date = dateInput.value;
+            const photos = await getData('https://api.nasa.gov/mars-photos/api/v1/rovers/' + roverName + '/photos?earth_date=' + date + '&api_key=D8ibfnfTOZIcR075vaMmFOaeVfMy116t1DuxOeAj');
+            for(let i= 0; i<photos.photos.length; i++)
+            {
+                let photoURL = photos.photos[i].img_src;
+                let roverPhoto = document.createElement('img');
+                roverPhoto.src = photoURL;
+                roverPhoto.alt = 'Bild från rover';
+                roverPhoto.classList = 'roverPhoto';
+                photoDiv.appendChild(roverPhoto);
+            }
+        })
+    })
 }
 
+const countDates = async (roverName) => {
+    const data = await getData('https://api.nasa.gov/mars-photos/api/v1/manifests/' + roverName + '/?api_key=D8ibfnfTOZIcR075vaMmFOaeVfMy116t1DuxOeAj');
+    const minDate = data.photo_manifest.photos[0].earth_date;
+    const maxDate = data.photo_manifest.max_date;
+    const total = minDate + ' och ' + maxDate;
+    return total;
+}
+
+countDates('curiosity');
+countDates('opportunity');
+countDates('spirit');
 displayHome();
 displayRovers();
 
