@@ -12,9 +12,8 @@ async function getData(url){
     return data;
 }
 
-const myCreateElement = (element, myClass, myId) => {
+const myCreateElement = (element, myId) => {
     const create = document.createElement(element);
-    create.setAttribute('class', myClass);
     create.setAttribute('id', myId);
     return create;
 }
@@ -37,26 +36,25 @@ const displayRovers = async () => {
     const roverData = await getData('api/rovers');
     for(let i=0; i < roverData.length; i++)
     {
-        let roverDiv = myCreateElement('div', '', roverData[i].name.toLowerCase());
+        let roverDiv = myCreateElement('div', roverData[i].name.toLowerCase());
         roverDiv.innerText = roverData[i].name;
         app.menu.appendChild(roverDiv);
-        displayRoverInfo(roverData[i]);
+        displayRoverInfo(roverData[i].roverId);
     }
 }
 
 //Skriver ut information om rovern beroende på användarens val
-const displayRoverInfo = async(roverData) => {
+const displayRoverInfo = async(id) => {
+    const roverData = await getData('api/rovers/' + id);
     let rover = document.querySelector('#' + roverData.name.toLowerCase());
-
     rover.addEventListener('click', async () => {
-
         app.content.innerText = roverData.history;
         let btn = document.querySelector('main>button');
         if(btn !== null)
         {
             btn.remove();
         }
-        let dateBtn = myCreateElement('button', '', roverData.name.toLowerCase() + 'Btn');
+        let dateBtn = myCreateElement('button', roverData.name.toLowerCase() + 'Btn');
         dateBtn.innerText = 'Foton från ' + roverData.name;
         app.mainSection.appendChild(dateBtn);
         displayDateView(roverData.name, dateBtn);
@@ -101,8 +99,7 @@ const displayPhotoView = async (roverName, photoBtn, dateInput) => {
         if(checkdiv !== null){
             checkdiv.remove();
         }
-        const photoDiv = document.createElement('div');
-        photoDiv.id="photos";
+        const photoDiv = myCreateElement('div', 'photos');
         app.content.appendChild(photoDiv);
 
         const date = dateInput.value;
@@ -116,22 +113,8 @@ const displayPhotoView = async (roverName, photoBtn, dateInput) => {
             roverPhoto.classList = 'roverPhoto';
             photoDiv.appendChild(roverPhoto);
         }
-    })
+    });
 }
 
 displayHome();
 displayRovers();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
