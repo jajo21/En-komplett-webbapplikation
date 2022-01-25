@@ -1,35 +1,42 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Rovers.API.Domain.Models;
 using Rovers.API.Domain.Services;
+using Rovers.API.Resources;
 
 namespace Rovers.API.Controllers
 {
     [Route("api/[controller]")]
-    public class RoversController : ControllerBase
+    [ApiController]
+    public class RoversController : Controller
     {
         private readonly IRoverService _roverService;
+        private readonly IMapper _mapper;
 
-        public RoversController(IRoverService roverService)
+        public RoversController(IRoverService roverService, IMapper mapper)
         {
             _roverService = roverService;
+            _mapper = mapper;
         }
 
         [HttpGet]
-        public async Task<IEnumerable<Rover>> GetAllAsync()
+        public async Task<IEnumerable<RoverResource>> GetRoversAsync()
         {
             var rovers = await _roverService.ListAsync();
-            return rovers;
+            return _mapper.Map<IEnumerable<Rover>, IEnumerable<RoverResource>>(rovers);
         }
 
         [HttpGet("{roverId}")]
-        public async Task<Rover> GetRoverById(int roverId)
+        public async Task<ActionResult<RoverResource>> GetRover(int roverId)
         {
             var rover = await _roverService.GetRoverAsync(roverId);
-            return rover;
+
+            if(rover == null) return NotFound();
+            
+            return _mapper.Map<Rover, RoverResource>(rover);
         }
     }
 }

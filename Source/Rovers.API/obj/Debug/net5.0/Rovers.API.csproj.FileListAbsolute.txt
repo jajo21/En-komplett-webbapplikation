@@ -34,3 +34,9 @@ C:\Users\jjako\Desktop\Webbutvecklare\Dynamiska webbsystem 2\Uppgifter\En komple
 C:\Users\jjako\Desktop\Webbutvecklare\Dynamiska webbsystem 2\Uppgifter\En komplett webbapplikation\En-komplett-webbapplikation\Source\Rovers.API\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\jjako\Desktop\Webbutvecklare\Dynamiska webbsystem 2\Uppgifter\En komplett webbapplikation\En-komplett-webbapplikation\Source\Rovers.API\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\jjako\Desktop\Webbutvecklare\Dynamiska webbsystem 2\Uppgifter\En komplett webbapplikation\En-komplett-webbapplikation\Source\Rovers.API\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\jjako\Desktop\Webbutvecklare\Dynamiska webbsystem 2\Uppgifter\En komplett webbapplikation\En-komplett-webbapplikation\Source\Rovers.API\bin\Debug\net5.0\AutoMapper.dll
+C:\Users\jjako\Desktop\Webbutvecklare\Dynamiska webbsystem 2\Uppgifter\En komplett webbapplikation\En-komplett-webbapplikation\Source\Rovers.API\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\jjako\Desktop\Webbutvecklare\Dynamiska webbsystem 2\Uppgifter\En komplett webbapplikation\En-komplett-webbapplikation\Source\Rovers.API\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\jjako\Desktop\Webbutvecklare\Dynamiska webbsystem 2\Uppgifter\En komplett webbapplikation\En-komplett-webbapplikation\Source\Rovers.API\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
+C:\Users\jjako\Desktop\Webbutvecklare\Dynamiska webbsystem 2\Uppgifter\En komplett webbapplikation\En-komplett-webbapplikation\Source\Rovers.API\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+C:\Users\jjako\Desktop\Webbutvecklare\Dynamiska webbsystem 2\Uppgifter\En komplett webbapplikation\En-komplett-webbapplikation\Source\Rovers.API\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
