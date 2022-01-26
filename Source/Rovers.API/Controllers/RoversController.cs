@@ -23,10 +23,10 @@ namespace Rovers.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<RoverResource>> GetRoversAsync()
+        public async Task<ActionResult<IEnumerable<RoverResource>>> GetAllRovers()
         {
-            var rovers = await _roverService.ListAsync();
-            return _mapper.Map<IEnumerable<Rover>, IEnumerable<RoverResource>>(rovers);
+            var rovers = await _roverService.GetAllRoversAsync();
+            return Ok(_mapper.Map<IEnumerable<Rover>, IEnumerable<RoverResource>>(rovers));
         }
 
         [HttpGet("{roverId}")]

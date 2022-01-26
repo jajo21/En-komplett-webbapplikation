@@ -13,9 +13,9 @@ namespace Rovers.API.Services
         {
             _roverRepository = roverRepository;
         }
-        public async Task<IEnumerable<Rover>> ListAsync()
+        public async Task<IEnumerable<Rover>> GetAllRoversAsync()
         {
-            return await _roverRepository.ListAsync();
+            return await _roverRepository.GetAllRoversAsync();
         }
         public async Task<Rover> GetRoverAsync(int roverId)
         {
