@@ -6,7 +6,7 @@ const app = {
 }
 
 // Funktioner som används genom hela programmet
-async function getData(url){
+const getData = async (url) => {
     const response = await fetch(url);
     const data = await response.json();
     return data;
@@ -95,9 +95,9 @@ const displayDateView = async (roverName, dateBtn) => {
 const displayPhotoView = async (roverName, photoBtn, dateInput) => {
     photoBtn.addEventListener('click', async () => {
 
-        const checkdiv = document.querySelector('#photos');
-        if(checkdiv !== null){
-            checkdiv.remove();
+        const isPhotosCreated = document.querySelector('#photos');
+        if(isPhotosCreated !== null){
+            isPhotosCreated.remove();
         }
         const photoDiv = myCreateElement('div', 'photos');
         app.content.appendChild(photoDiv);
