@@ -14,7 +14,7 @@ namespace Rovers.API.Persistence.Repositories
         {
             
         }
-        public async Task<IEnumerable<Rover>> ListAsync()
+        public async Task<IEnumerable<Rover>> GetAllRoversAsync()
         {
             return await _context.Rovers.ToListAsync();
         }

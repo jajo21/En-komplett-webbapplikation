@@ -6,7 +6,7 @@ namespace Rovers.API.Domain.Services
 {
     public interface IRoverService
     {
-        Task<IEnumerable<Rover>> ListAsync();
+        Task<IEnumerable<Rover>> GetAllRoversAsync();
         Task<Rover> GetRoverAsync(int roverId);
     }
 }

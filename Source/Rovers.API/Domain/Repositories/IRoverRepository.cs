@@ -7,7 +7,7 @@ namespace Rovers.API.Domain.Repositories
 {
     public interface IRoverRepository
     {
-        Task<IEnumerable<Rover>> ListAsync();
+        Task<IEnumerable<Rover>> GetAllRoversAsync();
         Task<Rover> GetRoverAsync(int roverId);
     }
 }
