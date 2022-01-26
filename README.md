@@ -5,7 +5,7 @@
 *Vad behöver göras för att ditt program ska starta och gå och använda?*
 **Kräver .NET5.0 SDK** och att
 **Navigera till Rovers.API-mappen via terminalen och skriva "dotnet run"** samt en
-**Webbläsare där du behöver navigera in på https://localhost:5006 för att testa klientgränssnittet.** Vill du endast kontrollera API-åtkomstpunkterna så navigera in på **https://localhost:5006/api/rovers eller https://localhost:5006/api/rovers/{roverId}**
+**Webbläsare där du behöver navigera in på https://localhost:5001 för att testa klientgränssnittet.** Vill du endast kontrollera API-åtkomstpunkterna så navigera in på **https://localhost:5001/api/rovers eller https://localhost:5001/api/rovers/{roverId}**
 
 ## TODO - Kvar att göra
 
