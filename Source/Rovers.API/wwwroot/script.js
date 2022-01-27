@@ -5,7 +5,7 @@ const app = {
     content: document.querySelector('#content'),
 }
 
-// Funktioner som används genom hela programmet
+// Generella funktioner som används genom hela programmet
 const getData = async (url) => {
     const response = await fetch(url);
     const data = await response.json();
