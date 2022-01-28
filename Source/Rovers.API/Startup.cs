@@ -41,7 +41,6 @@ namespace Rovers.API
             services.AddScoped<IRoverService, RoverService>();
 
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
-            services.AddCors();
             services.AddControllers();
         }
 
@@ -58,12 +57,6 @@ namespace Rovers.API
             app.UseStaticFiles();
 
             app.UseRouting();
-
-            app.UseCors(x => x
-                .AllowAnyMethod()
-                .AllowAnyHeader()
-                .SetIsOriginAllowed(origin => true)
-                .AllowCredentials()); 
 
             app.UseAuthorization();
 
