@@ -25,6 +25,7 @@
 * Entity Framework Core
 * REST-API
 * In Memory Database
+* Automapper
 * JavaScript
 * Fetch-API
 * HTML
