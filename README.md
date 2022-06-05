@@ -15,8 +15,10 @@
 
 ## Tekniker
 * C#
-* ASP.NET
+* ASP.NET Core
+* Entity Framework Core
 * REST-API
+* In Memory Database
 * JavaScript
 * Fetch-API
 * HTML
