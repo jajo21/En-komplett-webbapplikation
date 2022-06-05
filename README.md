@@ -1,25 +1,29 @@
-# En-komplett-webbapplikation
-
+# En-komplett-webbapplikation - Januari 2022
 ## Instruktioner
+1. Ladda ner repot från https://github.com/jajo21/En-komplett-webbapplikation
+2. Leta upp valfri terminal och utgå från mappen "./Source/Rovers.API"
+3. Applikationen kräver att du har .NET5.0 SDK installerat
+4. Skriv kommandot ```dotnet run``` i terminalen
+5. Applikationen körs nu på port 5000 och 5001
+6. Öppna en webbläsare och navigera in på https://localhost:5001/ för att testa klientgränssnittet.
+7. Vill du endast kontrollera API-åtkomstpunkterna så navigera in på **https://localhost:5001/api/rovers eller https://localhost:5001/api/rovers/{roverId}**
 
-*Vad behöver göras för att ditt program ska starta och gå och använda?*
-**Kräver .NET5.0 SDK** och att
-**Navigera till Rovers.API-mappen via terminalen och skriva "dotnet run"** samt en
-**Webbläsare där du behöver navigera in på https://localhost:5001 för att testa klientgränssnittet.** Vill du endast kontrollera API-åtkomstpunkterna så navigera in på **https://localhost:5001/api/rovers eller https://localhost:5001/api/rovers/{roverId}**
+## Syfte - YH-utbildning: Webbutvecklare .NET
+* Inlämningsuppgift i kursen Dynamiska Webbsystem 2 - Januari 2022
+* Beskrivning: Här ska jag bygga ett klientgränssnitt som hämtar data från NASA:s API, men även lägga till funktionalitet från ett eget skapat REST-API för att demonstrera att jag har förståelse för båda delarna.
+* Resultat: 100/100 (G)
 
-## TODO - Kvar att göra
+## Tekniker
+* C#
+* ASP.NET
+* REST-API
+* JavaScript
+* Fetch-API
+* HTML
+* CSS
 
-*Vad har du inte hunnit med i denna uppgift?*
-
- |Krav|Uppfyllt|Egna Kommentarer|
- |---|---|---|
-|**1**  |**Ja**| |
-|**2**  |**Ja**| |
-|**3**  |**Ja**| |
-|**4**  |**Ja**| |
-|**5**  |**Ja**| |
-|**6**  |**Ja**| |
-|**7**  |**Ja**| |
+## Kravspecifikation
+[Inlämning - En komplett webbapplikation.pdf](https://github.com/jajo21/En-komplett-webbapplikation/files/8840142/Inlamning.-.En.komplett.webbapplikation.pdf)
 
 ## Förtydliganden/motivering
 Jag har skapat två varianter av den här uppgiften. En som är mer likt den interaktiva guiden och en som är mer likt Shawns sätt på pluralsight att bygga ett REST-API. Jag blev lite fundersam vilken jag skulle lämna in men tänkte sen att det inte spelar så stor roll. Båda fungerar, men en reflektion jag har är att Shawns sätt att bygga känns tydligare och mer dry på något sätt. Det kan ha mycket att göra med att det liknar mer sättet att bygga som vi har gjort i tidigare MVC-projekt. Repot jag tänkte lämna in följer ändock fortfarande den interaktiva guiden. Med tiden lär man sig säkert sina egna preferencer hur man vill skapa ett projekt för största möjliga tydlighet. Sen lär man få anpassa sig tänker jag, om man på en arbetsplats får hoppa in i olika projekt. 
