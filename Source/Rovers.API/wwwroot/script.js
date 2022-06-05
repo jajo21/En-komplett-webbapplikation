@@ -3,6 +3,7 @@ const app = {
     menu: document.querySelector('#menu'),
     mainSection: document.querySelector('main'),
     content: document.querySelector('#content'),
+    apiKey: '***' // YOU NEED TO GET YOUR OWN API-KEY FROM https://api.nasa.gov/, AND POST IT INSTEAD OF *** TO GET PHOTOS
 }
 
 // Generella funktioner som används genom hela programmet
@@ -71,7 +72,7 @@ const displayDateView = async (roverName, dateBtn) => {
         h2.innerText = roverName + ' foton';
         app.content.appendChild(h2);
 
-        const manifestData = await getData('https://api.nasa.gov/mars-photos/api/v1/manifests/' + roverName + '/?api_key=D8ibfnfTOZIcR075vaMmFOaeVfMy116t1DuxOeAj');
+        const manifestData = await getData('https://api.nasa.gov/mars-photos/api/v1/manifests/' + roverName + '/?api_key=' + app.apiKey);
         const minDate = manifestData.photo_manifest.photos[0].earth_date;
         const maxDate = manifestData.photo_manifest.max_date;
         const betweenDatesElement = document.createElement('p');
@@ -103,7 +104,7 @@ const displayPhotoView = async (roverName, photoBtn, dateInput) => {
         app.content.appendChild(photoDiv);
 
         const date = dateInput.value;
-        const photos = await getData('https://api.nasa.gov/mars-photos/api/v1/rovers/' + roverName + '/photos?earth_date=' + date + '&api_key=D8ibfnfTOZIcR075vaMmFOaeVfMy116t1DuxOeAj');
+        const photos = await getData('https://api.nasa.gov/mars-photos/api/v1/rovers/' + roverName + '/photos?earth_date=' + date + '&api_key=' + app.apiKey);
         for(let i= 0; i<photos.photos.length; i++)
         {
             let photoURL = photos.photos[i].img_src;
