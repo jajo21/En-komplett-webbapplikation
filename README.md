@@ -1,5 +1,6 @@
 # En-komplett-webbapplikation - Januari 2022
 ## Instruktioner
+**Starta applikationen**
 1. Ladda ner repot från https://github.com/jajo21/En-komplett-webbapplikation
 2. Leta upp valfri terminal och utgå från mappen "./Source/Rovers.API"
 3. Applikationen kräver att du har .NET5.0 SDK installerat
@@ -7,6 +8,11 @@
 5. Applikationen körs nu på port 5000 och 5001
 6. Öppna en webbläsare och navigera in på https://localhost:5001/ för att testa klientgränssnittet.
 7. Vill du endast kontrollera API-åtkomstpunkterna så navigera in på **https://localhost:5001/api/rovers eller https://localhost:5001/api/rovers/{roverId}**
+
+**För att applikationen ska fungera**
+1. Navigera in på https://api.nasa.gov/ och registera dig för att få en api-nyckel
+2. I filen "./Source/Rovers.API/wwwroot/script.js" byter du ut variabeln apiKey värdet till api-nyckeln du får från NASA
+3. Nu kan du start om applikationen på nytt
 
 ## Syfte - YH-utbildning: Webbutvecklare .NET
 * Inlämningsuppgift i kursen Dynamiska Webbsystem 2 - Januari 2022
